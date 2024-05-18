@@ -1,0 +1,10 @@
+<HTML>
+<HEAD>
+ <TITLE>PAGINA EJEMPLO</TITLE>
+</HEAD>
+<BODY>
+<?PHP
+Echo "HOLA MUNDO";
+?>
+</BODY>
+</HTML>

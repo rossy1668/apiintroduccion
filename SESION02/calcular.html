@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULAR ÁREA</title>
+    <style>
+        .TextoFondo {
+            background-color: #CCFFFF;
+        }
+        marquee {
+            direction: left;
+            background-color: #FF0000;
+            height: 30px;
+            behavior: alternate;
+        }
+        form {
+            margin-top: 20px;
+        }
+        table {
+            margin: 0 auto; 
+            width: 441px;
+            border: 5px solid #EEFA00;
+            background-color: #EEFA00;
+        }
+    </style>
+</head>
+<body style="background-color: #33ff99;" onload="document.getElementById('txtb').focus()">
+    <h1>
+        <marquee>GESTIÓN Y ADMINISTRACIÓN WEB</marquee>
+    </h1>
+    <form method="post" action="areatri.php">
+        <table>
+            <caption><strong>CALCULAR ÁREA DEL TRIÁNGULO</strong></caption>
+            <tr>
+                <td width="81">Base</td>
+                <td width="150">
+                    <input name="txtb" type="text" style="text-align:right;" id="txtb" value="<?=$b?>">
+                </td>
+            </tr>
+            <tr>
+                <td>Altura</td>
+                <td>
+                    <input name="txth" type="text" style="text-align:right;" id="txth" value="<?=$h?>">
+                </td>
+            </tr>
+            <tr>
+                <td>Área</td>
+                <td>
+                    <input disabled name="txta" type="text" style="text-align:right;" class="TextoFondo" id="txta" value="<?=$area?>">
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input name="btnCalcular" type="submit" id="btnCalcular" value="Calcular">&nbsp;
+                    <input name="btnNuevo" type="button" id="btnNuevo" value="Nuevo" onclick="reset();">&nbsp;
+                    <input name="btnSalir" type="button" value="Salir" onclick="salir();">&nbsp;
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function reset() {
+            document.getElementById("txtb").value = "";
+            document.getElementById("txth").value = "";
+            document.getElementById("txta").value = "";
+            document.getElementById('txtb').focus();
+        }
+
+        function salir() {
+            var resp = confirm("¿Está seguro de salir?");
+            if (resp == true) {
+                document.location.href = "http://localhost/";
+            }
+        }
+    </script>
+</body>
+</html>
